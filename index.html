@@ -1,0 +1,609 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RoryGaming247 | Official Website</title>
+<style>
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: #090511;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+nav {
+  background: #170b2b;
+  border-bottom: 2px solid #913cff;
+  padding: 14px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+nav a {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 8px;
+  font-size: 14px;
+}
+nav a:hover { color: #c68cff; }
+header {
+  text-align: center;
+  padding: 75px 20px;
+  background: linear-gradient(135deg,#10051e,#51008b,#10051e);
+}
+header h1 {
+  font-size: clamp(38px,7vw,65px);
+  color: #e1baff;
+  text-shadow: 0 0 25px #9b3cff;
+}
+section {
+  padding: 65px 20px;
+  text-align: center;
+  scroll-margin-top: 115px;
+}
+section h2 {
+  color: #c68cff;
+  font-size: 32px;
+}
+.card, .about-card {
+  background: #1c1031;
+  border: 1px solid #8132db;
+  border-radius: 18px;
+  padding: 30px;
+  max-width: 750px;
+  margin: 20px auto;
+  box-shadow: 0 0 25px #5900aa44;
+}
+.button {
+  display: inline-block;
+  background: #8430dc;
+  color: white;
+  text-decoration: none;
+  padding: 15px 25px;
+  margin: 10px;
+  border: 0;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 15px;
+}
+.button:hover {
+  background: #ad62ff;
+  transform: scale(1.04);
+}
+.event-banner {
+  background: linear-gradient(90deg,#5c168f,#9b2bdb,#5c168f);
+  padding: 20px;
+  text-align: center;
+  border-bottom: 2px solid #d4a3ff;
+}
+.event-banner h2 { margin: 8px; }
+.event-card {
+  border: 2px solid #b366ff;
+  background: linear-gradient(135deg,#210c3d,#42116b);
+  animation: eventGlow 2s infinite alternate;
+}
+@keyframes eventGlow {
+  from { box-shadow: 0 0 12px #8a2be255; }
+  to { box-shadow: 0 0 35px #a855f7aa; }
+}
+.countdown {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 25px 0;
+}
+.time-box {
+  background: #34135c;
+  border: 1px solid #a855f7;
+  border-radius: 12px;
+  padding: 18px 12px;
+  min-width: 85px;
+}
+.time-box strong {
+  display: block;
+  font-size: 30px;
+  color: #e1baff;
+}
+.time-box span {
+  font-size: 12px;
+  color: #d6b5f4;
+}
+#gameCanvas {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  margin: 20px auto;
+  background: #100820;
+  border: 3px solid #9b3cff;
+  border-radius: 12px;
+}
+.game-controls {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+.game-controls button {
+  font-size: 25px;
+  min-width: 90px;
+  touch-action: none;
+}
+.about-section { background: #0c0618; }
+.about-card {
+  background: linear-gradient(145deg,#211039,#10091f);
+  border: 2px solid #8a2be2;
+  max-width: 800px;
+}
+.about-logo {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #a855f7;
+}
+.about-tagline { color: #c9a3ff; }
+.about-info {
+  background: #160b2a;
+  border-radius: 15px;
+  padding: 20px;
+  line-height: 1.8;
+}
+.fact-grid {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 15px;
+  margin: 25px 0;
+}
+.fact {
+  background: #30144f;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #8430dc;
+}
+.goal-box {
+  background: linear-gradient(90deg,#4c1485,#7925b6);
+  border-radius: 15px;
+  padding: 20px;
+  margin: 25px 0;
+}
+footer {
+  background: #170b2b;
+  padding: 25px;
+  text-align: center;
+  color: #aaa;
+}
+@media(max-width:550px) {
+  .fact-grid { grid-template-columns: 1fr; }
+  nav a { margin: 5px; font-size: 12px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#home">🏠 Home</a>
+  <a href="#youtube">📺 YouTube</a>
+  <a href="#roblox">🎮 Roblox</a>
+  <a href="#games">🧟 Games</a>
+  <a href="#event">🚨 Event</a>
+  <a href="#countdown">⏳ Countdown</a>
+  <a href="#minigame">🕹️ Mini-Game</a>
+  <a href="#news">📢 News</a>
+  <a href="#about">👤 About</a>
+</nav>
+
+<!-- EVENT ANNOUNCEMENT -->
+<div class="event-banner">
+  <h2>🚨 ZOMBIE ESCAPE EVENT 🚨</h2>
+  <p>Check out the official Zombie Escape Roblox event!</p>
+  <a class="button"
+     href="https://www.roblox.com/events/7610464826650919491"
+     target="_blank" rel="noopener noreferrer">
+     🔥 VIEW EVENT
+  </a>
+</div>
+
+<!-- HOME -->
+<header id="home">
+  <h1>RoryGaming247</h1>
+  <p>Welcome to my official gaming website!</p>
+  <p>🎮 Roblox • 📺 YouTube • 🎵 Music</p>
+  <a class="button" href="#games">Explore My Games</a>
+  <a class="button" href="#minigame">Play Mini-Game</a>
+</header>
+
+<!-- YOUTUBE -->
+<section id="youtube">
+  <h2>📺 My YouTube Channel</h2>
+  <div class="card">
+    <h3>RoryGaming247</h3>
+    <p>Watch my Roblox videos, gaming adventures and music!</p>
+    <a class="button"
+       href="https://www.youtube.com/@RoryGaming247"
+       target="_blank" rel="noopener noreferrer">
+       🔔 VISIT MY YOUTUBE
+    </a>
+  </div>
+</section>
+
+<!-- ROBLOX -->
+<section id="roblox">
+  <h2>🎮 My Roblox Community</h2>
+  <div class="card">
+    <h3>RoryGaming</h3>
+    <p>Join my Roblox group for games and updates!</p>
+    <a class="button"
+       href="https://www.roblox.com/communities/36084192/RoryGaming#!/about"
+       target="_blank" rel="noopener noreferrer">
+       💜 JOIN MY ROBLOX GROUP
+    </a>
+  </div>
+</section>
+
+<!-- GAMES -->
+<section id="games">
+  <h2>🧟 My Roblox Games</h2>
+  <div class="card">
+    <h3>Zombie Escape</h3>
+    <p>Survive dangerous maps and escape the zombies!</p>
+    <a class="button"
+       href="https://www.roblox.com/games/115755347089105/Zombie-Escape"
+       target="_blank" rel="noopener noreferrer">
+       🎮 PLAY ZOMBIE ESCAPE
+    </a>
+  </div>
+  <div class="card">
+    <h3>🚀 More Games Coming Soon!</h3>
+    <p>Stay tuned for more Roblox creations!</p>
+  </div>
+</section>
+
+<!-- EVENT -->
+<section id="event">
+  <h2>🚨 Zombie Escape Event</h2>
+  <div class="card event-card">
+    <h3>🧟 OFFICIAL ROBLOX EVENT!</h3>
+    <p>Something exciting is happening in Zombie Escape!</p>
+    <p>Join the event and check out what's coming!</p>
+    <a class="button"
+       href="https://www.roblox.com/events/7610464826650919491"
+       target="_blank" rel="noopener noreferrer">
+       🚀 JOIN THE EVENT
+    </a>
+  </div>
+</section>
+
+<!-- COUNTDOWN -->
+<section id="countdown">
+  <h2>⏳ Zombie Escape Update Countdown</h2>
+  <div class="card">
+    <h3>🚨 NEXT UPDATE IN...</h3>
+    <p>Get ready for the next Zombie Escape update!</p>
+    <div class="countdown">
+      <div class="time-box">
+        <strong id="days">--</strong>
+        <span>DAYS</span>
+      </div>
+      <div class="time-box">
+        <strong id="hours">--</strong>
+        <span>HOURS</span>
+      </div>
+      <div class="time-box">
+        <strong id="minutes">--</strong>
+        <span>MINUTES</span>
+      </div>
+      <div class="time-box">
+        <strong id="seconds">--</strong>
+        <span>SECONDS</span>
+      </div>
+    </div>
+    <p id="countdownMessage">Update date to be announced!</p>
+  </div>
+</section>
+
+<!-- MINI-GAME -->
+<section id="minigame">
+  <h2>🕹️ Zombie Dodge Mini-Game</h2>
+  <div class="card">
+    <h3>🧟 CAN YOU SURVIVE?</h3>
+    <p>Dodge the falling zombies!</p>
+    <p>Use ← → or A/D to move.</p>
+    <h3>Score: <span id="score">0</span></h3>
+    <p>Best: <span id="best">0</span></p>
+    <canvas id="gameCanvas" width="400" height="450"></canvas>
+    <button class="button" id="startGame">▶ START GAME</button>
+    <div class="game-controls">
+      <button class="button" id="leftBtn">⬅️</button>
+      <button class="button" id="rightBtn">➡️</button>
+    </div>
+    <p id="gameStatus">Press Start to play!</p>
+  </div>
+</section>
+
+<!-- NEWS -->
+<section id="news">
+  <h2>📢 Latest News</h2>
+  <div class="card">
+    <h3>🔥 Website Launch!</h3>
+    <p>Welcome to the official RoryGaming247 website!</p>
+  </div>
+  <div class="card">
+    <h3>🧟 Zombie Escape Event</h3>
+    <p>Our Roblox event is here! Visit the Event section.</p>
+    <a class="button" href="#event">VIEW EVENT</a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="about-section">
+  <h2>💜 ABOUT ME</h2>
+  <div class="about-card">
+    <img src="logo.png" alt="RoryGaming247 Logo" class="about-logo">
+    <h2>Hey! I'm RoryGaming247 👋</h2>
+    <p class="about-tagline">
+      🎮 Gamer | 📺 YouTuber | 🛠️ Roblox Developer
+    </p>
+    <div class="about-info">
+      <h3>💜 A Bit About Me</h3>
+      <p>
+        Hey! I'm Rory! I LOVE Roblox,
+        especially RIVALS! But I want to
+        let you guys know a bit more about me!
+      </p>
+      <p>
+        First thing, I love making games!
+        I mainly use Roblox Studio to create
+        my games, and you can check out
+        some of them right here!
+      </p>
+      <p>
+        I also have a few songs that
+        you can check out on my YouTube channel!
+      </p>
+    </div>
+    <h3>⚡ FUN FACTS ABOUT ME</h3>
+    <div class="fact-grid">
+      <div class="fact">🎯 RIVALS is THE BEST!</div>
+      <div class="fact">⚽ I love football!</div>
+      <div class="fact">🎮 I play FC27 sometimes!</div>
+      <div class="fact">🎵 I make my own songs!</div>
+    </div>
+    <div class="goal-box">
+      <h3>🏆 MY BIGGEST GOAL</h3>
+      <h2>ROAD TO 1,000 SUBSCRIBERS!</h2>
+      <p>Every subscriber gets us closer! 💜</p>
+    </div>
+    <a class="button"
+       href="https://www.youtube.com/@RoryGaming247"
+       target="_blank" rel="noopener noreferrer">
+       🔔 SUBSCRIBE TO MY CHANNEL
+    </a>
+    <a class="button" href="#games">🧟 CHECK OUT MY GAMES</a>
+  </div>
+</section>
+
+<footer>
+  © 2026 RoryGaming247 | Official Gaming Website
+</footer>
+
+<script>
+// COUNTDOWN
+// Example: "2026-11-20T18:00:00+00:00"
+// Leave empty until you know the update date.
+const updateDate = "";
+
+function updateCountdown() {
+  const ids = ["days","hours","minutes","seconds"];
+  const message = document.getElementById("countdownMessage");
+
+  if (!updateDate) {
+    ids.forEach(id => document.getElementById(id).textContent = "--");
+    message.textContent = "Update date to be announced!";
+    return;
+  }
+
+  const target = new Date(updateDate).getTime();
+  if (!Number.isFinite(target)) {
+    message.textContent = "Invalid update date.";
+    return;
+  }
+
+  const remaining = target - Date.now();
+  if (remaining <= 0) {
+    ids.forEach(id => document.getElementById(id).textContent = "00");
+    message.textContent = "🚀 THE UPDATE IS HERE!";
+    return;
+  }
+
+  const values = [
+    Math.floor(remaining / 86400000),
+    Math.floor((remaining / 3600000) % 24),
+    Math.floor((remaining / 60000) % 60),
+    Math.floor((remaining / 1000) % 60)
+  ];
+
+  ids.forEach((id,i) => {
+    document.getElementById(id).textContent =
+      String(values[i]).padStart(2,"0");
+  });
+  message.textContent = "Get ready for the next update!";
+}
+
+updateCountdown();
+setInterval(updateCountdown,1000);
+
+// ZOMBIE DODGE MINI-GAME
+const canvas = document.getElementById("gameCanvas");
+const ctx = canvas.getContext("2d");
+const scoreText = document.getElementById("score");
+const bestText = document.getElementById("best");
+const statusText = document.getElementById("gameStatus");
+const startBtn = document.getElementById("startGame");
+
+let player, zombies = [], score = 0, best = 0;
+let playing = false, animationId = null;
+let lastTime = 0, spawnTimer = 0, scoreTimer = 0;
+const keys = {left:false,right:false};
+
+try {
+  best = Number(localStorage.getItem("roryZombieBest")) || 0;
+} catch(e) {}
+bestText.textContent = best;
+
+function resetPlayer() {
+  player = {x:180,y:390,w:40,h:40,speed:270};
+}
+
+function drawGame() {
+  ctx.clearRect(0,0,400,450);
+  ctx.fillStyle = "#100820";
+  ctx.fillRect(0,0,400,450);
+  ctx.strokeStyle = "#311a50";
+
+  for(let x=0;x<400;x+=40) {
+    ctx.beginPath();
+    ctx.moveTo(x,0);
+    ctx.lineTo(x,450);
+    ctx.stroke();
+  }
+
+  ctx.font = "35px Arial";
+  ctx.textAlign = "center";
+
+  zombies.forEach(z => {
+    ctx.fillText("🧟",z.x+z.w/2,z.y+z.h-5);
+  });
+
+  ctx.fillText("🏃",player.x+player.w/2,player.y+player.h-5);
+}
+
+function startGame() {
+  if(animationId !== null) cancelAnimationFrame(animationId);
+  resetPlayer();
+  zombies = [];
+  score = 0;
+  spawnTimer = 0;
+  scoreTimer = 0;
+  lastTime = 0;
+  playing = true;
+  keys.left = false;
+  keys.right = false;
+  scoreText.textContent = 0;
+  statusText.textContent = "🧟 Dodge the zombies!";
+  startBtn.textContent = "↻ RESTART GAME";
+  animationId = requestAnimationFrame(gameLoop);
+}
+
+function collides(a,b) {
+  return a.x < b.x+b.w &&
+         a.x+a.w > b.x &&
+         a.y < b.y+b.h &&
+         a.y+a.h > b.y;
+}
+
+function gameOver() {
+  playing = false;
+  statusText.textContent = "💀 GAME OVER! Score: " + score;
+  if(score > best) {
+    best = score;
+    bestText.textContent = best;
+    try {
+      localStorage.setItem("roryZombieBest",best);
+    } catch(e) {}
+  }
+}
+
+function gameLoop(timestamp) {
+  if(!playing) return;
+  if(!lastTime) lastTime = timestamp;
+  const dt = Math.min((timestamp-lastTime)/1000,0.05);
+  lastTime = timestamp;
+
+  if(keys.left) player.x -= player.speed*dt;
+  if(keys.right) player.x += player.speed*dt;
+  player.x = Math.max(0,Math.min(400-player.w,player.x));
+
+  spawnTimer += dt;
+  scoreTimer += dt;
+
+  const interval = Math.max(0.3,1-score*0.003);
+  if(spawnTimer >= interval) {
+    spawnTimer = 0;
+    zombies.push({
+      x:Math.random()*362,
+      y:-40,w:38,h:38,
+      speed:130+score*0.8
+    });
+  }
+
+  zombies.forEach(z => z.y += z.speed*dt);
+  zombies = zombies.filter(z => z.y < 500);
+
+  if(scoreTimer >= 0.2) {
+    const points = Math.floor(scoreTimer/0.2);
+    score += points;
+    scoreTimer -= points*0.2;
+    scoreText.textContent = score;
+  }
+
+  drawGame();
+
+  if(zombies.some(z => collides(player,z))) {
+    gameOver();
+    return;
+  }
+
+  animationId = requestAnimationFrame(gameLoop);
+}
+
+resetPlayer();
+drawGame();
+startBtn.addEventListener("click",startGame);
+
+document.addEventListener("keydown",e => {
+  if(["ArrowLeft","ArrowRight"].includes(e.key) && playing)
+    e.preventDefault();
+
+  if(e.key==="ArrowLeft" || e.key.toLowerCase()==="a")
+    keys.left=true;
+  if(e.key==="ArrowRight" || e.key.toLowerCase()==="d")
+    keys.right=true;
+});
+
+document.addEventListener("keyup",e => {
+  if(e.key==="ArrowLeft" || e.key.toLowerCase()==="a")
+    keys.left=false;
+  if(e.key==="ArrowRight" || e.key.toLowerCase()==="d")
+    keys.right=false;
+});
+
+window.addEventListener("blur",() => {
+  keys.left=false;
+  keys.right=false;
+});
+
+function setupMoveButton(id,direction) {
+  const btn=document.getElementById(id);
+  btn.addEventListener("pointerdown",e => {
+    e.preventDefault();
+    keys[direction]=true;
+    btn.setPointerCapture(e.pointerId);
+  });
+  ["pointerup","pointercancel","lostpointercapture"].forEach(type => {
+    btn.addEventListener(type,() => keys[direction]=false);
+  });
+}
+
+setupMoveButton("leftBtn","left");
+setupMoveButton("rightBtn","right");
+</script>
+</body>
+</html>
